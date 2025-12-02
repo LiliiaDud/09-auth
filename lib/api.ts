@@ -1,6 +1,6 @@
 import axios from 'axios';
 import type { AxiosResponse } from 'axios';
-import type { Note, NoteTag } from '../types/note';
+import type { Note, NoteTag } from '@/types/note';
 
 const BASE_URL = 'https://notehub-public.goit.study/api';
 
@@ -35,7 +35,7 @@ export async function fetchNotes({
   search = '',
 }: FetchNotesParams): Promise<FetchNotesResponse> {
   const response: AxiosResponse<FetchNotesResponse> = await client.get('/notes', {
-    params: { page, perPage, search: search || undefined },
+    params: { page, perPage, search },
   });
 
   return response.data;
