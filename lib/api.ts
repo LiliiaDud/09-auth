@@ -1,6 +1,6 @@
 import axios from 'axios';
 import type { AxiosResponse } from 'axios';
-import type { Note, NoteTag } from '@/types/note';
+import type { Note } from '@/types/note';
 
 const BASE_URL = 'https://notehub-public.goit.study/api';
 
@@ -21,13 +21,14 @@ export interface FetchNotesParams {
   page?: number;
   perPage?: number;
   search?: string;
-  tag?: NoteTag;
+  tag?: string;
 }
 
 export interface CreateNotePayload {
+  id?: string;
   title: string;
   content?: string;
-  tag: NoteTag;
+  tag: string;
 }
 
 export async function fetchNotes({
@@ -40,6 +41,11 @@ export async function fetchNotes({
     params: { page, perPage, search, tag },
   });
 
+  return response.data;
+}
+
+export async function fetchNotesById(noteId: Note['id']) {
+  const response: AxiosResponse<Note> = await client.get(`/notes/${noteId}`);
   return response.data;
 }
 
