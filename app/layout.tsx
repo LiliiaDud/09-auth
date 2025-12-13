@@ -4,14 +4,15 @@ import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import TanStackProvider from '@/components/TanStackProvider/TanStackProvider';
 import { Roboto } from 'next/font/google';
+import { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'NoteHub — Personal notes manager',
   description: 'NoteHub — simple and efficient app to create, search and manage personal notes.',
   openGraph: {
     title: 'NoteHub — Personal notes manager',
     description: 'NoteHub — simple and efficient app to create, search and manage personal notes.',
-    url: 'https://my-deployed-site.vercel.app',
+    //    url: 'https://my-deployed-site.vercel.app',
     images: [
       {
         url: 'https://ac.goit.global/fullstack/react/notehub-og-meta.jpg',
