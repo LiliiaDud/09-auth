@@ -2,11 +2,12 @@ import axios from 'axios';
 import type { Note } from '@/types/note';
 
 const BASE_URL = 'https://notehub-public.goit.study/api';
+const NOTEHUB_TOKEN = process.env.NEXT_PUBLIC_NOTEHUB_TOKEN;
 
 const client = axios.create({
   baseURL: BASE_URL,
   headers: {
-    Authorization: `Bearer ${process.env.NEXT_PUBLIC_NOTEHUB_TOKEN}`,
+    Authorization: `Bearer ${NOTEHUB_TOKEN}`,
     'Content-Type': 'application/json',
   },
 });

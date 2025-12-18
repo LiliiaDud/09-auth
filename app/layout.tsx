@@ -1,4 +1,3 @@
-//import type { Metadata } from 'next';
 import './globals.css';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
@@ -12,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'NoteHub — Personal notes manager',
     description: 'NoteHub — simple and efficient app to create, search and manage personal notes.',
-    //    url: 'https://my-deployed-site.vercel.app',
+    url: `https://08-zustand-six-pi.vercel.app/`,
     images: [
       {
         url: 'https://ac.goit.global/fullstack/react/notehub-og-meta.jpg',

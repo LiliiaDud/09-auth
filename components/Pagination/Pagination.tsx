@@ -12,7 +12,7 @@ export default function Pagination({ pageCount, currentPage, onPageChange }: Pag
     <ReactPaginate
       pageCount={pageCount}
       forcePage={currentPage - 1}
-      onPageChange={event => onPageChange(event.selected + 1)}
+      onPageChange={({ selected }) => onPageChange(selected + 1)}
       containerClassName={css.pagination}
       activeClassName={css.active}
       previousLabel="<"
