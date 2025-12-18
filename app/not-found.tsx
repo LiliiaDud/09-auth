@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: '404 — Page not found',
     description: 'The requested page was not found on NoteHub.',
-    // url: 'https://my-deployed-site.vercel.app/not-found',
+    url: `https://08-zustand-six-pi.vercel.app/not-found`,
     images: [
       {
         url: 'https://ac.goit.global/fullstack/react/notehub-og-meta.jpg',
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <>
-      <h1>404 — Page not found</h1>
-      <p>Sorry, the page you are looking for does not exist.</p>
+      <h1 className={css.title}>404 — Page not found</h1>
+      <p className={css.description}>Sorry, the page you are looking for does not exist.</p>
     </>
   );
 }
