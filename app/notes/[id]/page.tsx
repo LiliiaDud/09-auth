@@ -13,11 +13,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const note = await fetchNoteById(id);
   return {
     title: `Note:${note.title}`,
-    description: `${note.content}`,
+    description: note.content.slice(0, 30),
     openGraph: {
       title: `Note:${note.title}`,
-      description: `${note.content}`,
-      url: `https://notehub.com/notes/${id}`,
+      description: note.content.slice(0, 100),
+      url: `https://08-zustand-six-pi.vercel.app/notes/${id}`,
       images: [
         {
           url: 'https://ac.goit.global/fullstack/react/notehub-og-meta.jpg',
