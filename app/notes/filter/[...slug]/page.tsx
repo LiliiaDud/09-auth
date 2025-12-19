@@ -2,6 +2,7 @@ import { fetchNotes } from '@/lib/api';
 import NotesClient from './Notes.client';
 import type { Metadata } from 'next';
 import { QueryClient, HydrationBoundary, dehydrate } from '@tanstack/react-query';
+import { FQDN } from '@/lib/fqdn';
 
 interface Props {
   params: Promise<{ slug: string[] }>;
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `Notes tagged with:${tag}`,
       description: `${tag}`,
-      url: `https://08-zustand-six-pi.vercel.app/notes/filter/${tag}`,
+      url: `https://${FQDN}/notes/filter/${tag}`,
       images: [
         {
           url: 'https://ac.goit.global/fullstack/react/notehub-og-meta.jpg',

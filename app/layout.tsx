@@ -4,6 +4,7 @@ import Footer from '@/components/Footer/Footer';
 import TanStackProvider from '@/components/TanStackProvider/TanStackProvider';
 import { Roboto } from 'next/font/google';
 import { Metadata } from 'next';
+import { FQDN } from '@/lib/fqdn';
 
 export const metadata: Metadata = {
   title: 'NoteHub — Personal notes manager',
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'NoteHub — Personal notes manager',
     description: 'NoteHub — simple and efficient app to create, search and manage personal notes.',
-    url: `https://08-zustand-six-pi.vercel.app/`,
+    url: `https://${FQDN}/`,
     images: [
       {
         url: 'https://ac.goit.global/fullstack/react/notehub-og-meta.jpg',

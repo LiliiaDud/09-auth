@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import CreateNote from './CreateNote';
+import { FQDN } from '@/lib/fqdn';
 
 export const metadata: Metadata = {
   title: 'Create note',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Create note',
     description: 'Create a new note in NoteHub.',
-    url: 'https://08-zustand-six-pi.vercel.app/notes/action/create',
+    url: `https://${FQDN}/notes/action/create`,
     images: [
       {
         url: 'https://ac.goit.global/fullstack/react/notehub-og-meta.jpg',

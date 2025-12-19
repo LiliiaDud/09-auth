@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import css from './page.module.css';
+import { FQDN } from '@/lib/fqdn';
 
 export const metadata: Metadata = {
   title: '404 — Page not found',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: '404 — Page not found',
     description: 'The requested page was not found on NoteHub.',
-    url: `https://08-zustand-six-pi.vercel.app/not-found`,
+    url: `https://${FQDN}/not-found`,
     images: [
       {
         url: 'https://ac.goit.global/fullstack/react/notehub-og-meta.jpg',
