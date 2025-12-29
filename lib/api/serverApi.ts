@@ -13,7 +13,8 @@ export async function fetchNotesServer(
   page: number,
   tag?: string
 ): Promise<FetchNotesResponse> {
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
+
   const { data } = await client.get<FetchNotesResponse>('/notes', {
     headers: {
       Cookie: cookieStore.toString(),
