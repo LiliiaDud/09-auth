@@ -10,14 +10,12 @@ import { keepPreviousData } from '@tanstack/react-query';
 import SearchBox from '@/components/SearchBox/SearchBox';
 import Pagination from '@/components/Pagination/Pagination';
 import NoteList from '@/components/NoteList/NoteList';
-import { useRouter } from 'next/navigation';
-
+import Link from 'next/link';
 interface Props {
   tag?: string;
 }
 
 export default function NotesClient({ tag }: Props) {
-  const router = useRouter();
   const [page, setPage] = useState(1);
   const [perPage] = useState(12);
   const [search, setSearch] = useState('');
@@ -38,22 +36,18 @@ export default function NotesClient({ tag }: Props) {
     setSearch(value);
   }, 400);
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    router.push('/notes/action/create');
-  };
-
   return (
     <div className={css.app}>
       <header className={css.toolbar}>
         <SearchBox onChange={handleSearch} />
+
         {totalPages > 1 && (
           <Pagination currentPage={page} pageCount={totalPages} onPageChange={setPage} />
         )}
 
-        <button className={css.button} onClick={handleClick}>
+        <Link href="/notes/action/create" className={css.button}>
           Create note +
-        </button>
+        </Link>
       </header>
 
       {notes.length > 0 && <NoteList notes={notes} />}
